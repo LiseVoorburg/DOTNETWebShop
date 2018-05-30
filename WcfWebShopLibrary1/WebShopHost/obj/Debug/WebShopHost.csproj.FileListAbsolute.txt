@@ -1,0 +1,11 @@
+C:\Users\lisev\source\repos\WcfWebShopLibrary1\WebShopHost\bin\Debug\WebShopHost.exe.config
+C:\Users\lisev\source\repos\WcfWebShopLibrary1\WebShopHost\bin\Debug\WebShopHost.exe
+C:\Users\lisev\source\repos\WcfWebShopLibrary1\WebShopHost\bin\Debug\WebShopHost.pdb
+C:\Users\lisev\source\repos\WcfWebShopLibrary1\WebShopHost\bin\Debug\WcfWebShopLibrary1.dll
+C:\Users\lisev\source\repos\WcfWebShopLibrary1\WebShopHost\bin\Debug\WcfWebShopLibrary1.pdb
+C:\Users\lisev\source\repos\WcfWebShopLibrary1\WebShopHost\bin\Debug\WcfWebShopLibrary1.dll.config
+C:\Users\lisev\source\repos\WcfWebShopLibrary1\WebShopHost\obj\Debug\WebShopHost.csprojAssemblyReference.cache
+C:\Users\lisev\source\repos\WcfWebShopLibrary1\WebShopHost\obj\Debug\WebShopHost.csproj.CoreCompileInputs.cache
+C:\Users\lisev\source\repos\WcfWebShopLibrary1\WebShopHost\obj\Debug\WebShopHost.csproj.CopyComplete
+C:\Users\lisev\source\repos\WcfWebShopLibrary1\WebShopHost\obj\Debug\WebShopHost.exe
+C:\Users\lisev\source\repos\WcfWebShopLibrary1\WebShopHost\obj\Debug\WebShopHost.pdb
