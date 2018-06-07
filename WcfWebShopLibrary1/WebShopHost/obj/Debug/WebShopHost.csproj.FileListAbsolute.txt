@@ -9,3 +9,7 @@ C:\Users\lisev\source\repos\WcfWebShopLibrary1\WebShopHost\obj\Debug\WebShopHost
 C:\Users\lisev\source\repos\WcfWebShopLibrary1\WebShopHost\obj\Debug\WebShopHost.csproj.CopyComplete
 C:\Users\lisev\source\repos\WcfWebShopLibrary1\WebShopHost\obj\Debug\WebShopHost.exe
 C:\Users\lisev\source\repos\WcfWebShopLibrary1\WebShopHost\obj\Debug\WebShopHost.pdb
+C:\Users\lisev\source\repos\WcfWebShopLibrary1\WebShopHost\bin\Debug\EntityFramework.dll
+C:\Users\lisev\source\repos\WcfWebShopLibrary1\WebShopHost\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\lisev\source\repos\WcfWebShopLibrary1\WebShopHost\bin\Debug\EntityFramework.xml
+C:\Users\lisev\source\repos\WcfWebShopLibrary1\WebShopHost\bin\Debug\EntityFramework.SqlServer.xml

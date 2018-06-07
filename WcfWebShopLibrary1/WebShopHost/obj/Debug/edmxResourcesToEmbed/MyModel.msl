@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MyModelStoreContainer" CdmEntityContainer="MyModelContainer">
+    <EntitySetMapping Name="gebruikerSet">
+      <EntityTypeMapping TypeName="IsTypeOf(MyModel.gebruiker)">
+        <MappingFragment StoreEntitySet="gebruikerSet">
+          <ScalarProperty Name="naam" ColumnName="naam" />
+          <ScalarProperty Name="wachtwoord" ColumnName="wachtwoord" />
+          <ScalarProperty Name="saldo" ColumnName="saldo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="productSet">
+      <EntityTypeMapping TypeName="IsTypeOf(MyModel.product)">
+        <MappingFragment StoreEntitySet="productSet">
+          <ScalarProperty Name="naam" ColumnName="naam" />
+          <ScalarProperty Name="prijs" ColumnName="prijs" />
+          <ScalarProperty Name="aantal" ColumnName="aantal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="orderSet">
+      <EntityTypeMapping TypeName="IsTypeOf(MyModel.order)">
+        <MappingFragment StoreEntitySet="orderSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="naamProduct" ColumnName="naamProduct" />
+          <ScalarProperty Name="aantal" ColumnName="aantal" />
+          <ScalarProperty Name="gebruiker_naam" ColumnName="gebruiker_naam" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="orderproduct" TypeName="MyModel.orderproduct" StoreEntitySet="orderproduct">
+      <EndProperty Name="order">
+        <ScalarProperty Name="Id" ColumnName="order_Id" />
+      </EndProperty>
+      <EndProperty Name="product">
+        <ScalarProperty Name="naam" ColumnName="product_naam" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
