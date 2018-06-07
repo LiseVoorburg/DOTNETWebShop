@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.ServiceModel;
 using WcfWebShopLibrary;
+using WebShopHost;
 
 namespace WebshopGUI
 {
@@ -31,6 +32,7 @@ namespace WebshopGUI
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
+
             test.Content = winkelService.Test("hoi");
 
         }

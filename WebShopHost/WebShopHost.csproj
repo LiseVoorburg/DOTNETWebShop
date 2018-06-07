@@ -52,43 +52,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="gebruiker.cs">
-      <DependentUpon>MyModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="MyModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MyModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="MyModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MyModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="MyModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MyModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="order.cs">
-      <DependentUpon>MyModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="product.cs">
-      <DependentUpon>MyModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
+    <Compile Include="program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
-    <EntityDeploy Include="MyModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>MyModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <None Include="MyModel.edmx.diagram">
-      <DependentUpon>MyModel.edmx</DependentUpon>
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
@@ -98,19 +66,6 @@
       <Project>{9CEB7796-C3A0-4AA8-8D9A-A4F08A01D04A}</Project>
       <Name>WcfWebShopLibrary1</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="MyModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>MyModel.Context.cs</LastGenOutput>
-      <DependentUpon>MyModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="MyModel.edmx.sql" />
-    <Content Include="MyModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>MyModel.cs</LastGenOutput>
-      <DependentUpon>MyModel.edmx</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

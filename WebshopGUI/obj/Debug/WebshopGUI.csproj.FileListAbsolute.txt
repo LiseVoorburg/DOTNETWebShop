@@ -17,3 +17,10 @@ C:\Users\koenfischer\Source\Repos\DOTNETWebShop\WebshopGUI\obj\Debug\WebshopGUI.
 C:\Users\koenfischer\Source\Repos\DOTNETWebShop\WebshopGUI\obj\Debug\WebshopGUI.csproj.CopyComplete
 C:\Users\koenfischer\Source\Repos\DOTNETWebShop\WebshopGUI\obj\Debug\WebshopGUI.exe
 C:\Users\koenfischer\Source\Repos\DOTNETWebShop\WebshopGUI\obj\Debug\WebshopGUI.pdb
+C:\Users\koenfischer\Source\Repos\DOTNETWebShop\WebshopGUI\bin\Debug\WebShopHost.exe
+C:\Users\koenfischer\Source\Repos\DOTNETWebShop\WebshopGUI\bin\Debug\WebShopHost.pdb
+C:\Users\koenfischer\Source\Repos\DOTNETWebShop\WebshopGUI\bin\Debug\WebShopHost.exe.config
+C:\Users\koenfischer\Source\Repos\DOTNETWebShop\WebshopGUI\bin\Debug\EntityFramework.dll
+C:\Users\koenfischer\Source\Repos\DOTNETWebShop\WebshopGUI\bin\Debug\EntityFramework.xml
+C:\Users\koenfischer\Source\Repos\DOTNETWebShop\WebshopGUI\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\koenfischer\Source\Repos\DOTNETWebShop\WebshopGUI\bin\Debug\EntityFramework.SqlServer.xml

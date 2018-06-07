@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="Model1Container">
+    <EntitySetMapping Name="gebruikers1">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.gebruiker)">
+        <MappingFragment StoreEntitySet="gebruikers1">
+          <ScalarProperty Name="naam" ColumnName="naam" />
+          <ScalarProperty Name="wachtwoord" ColumnName="wachtwoord" />
+          <ScalarProperty Name="saldo" ColumnName="saldo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="orders">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.order)">
+        <MappingFragment StoreEntitySet="orders">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="aantal" ColumnName="aantal" />
+          <ScalarProperty Name="product_naam" ColumnName="product_naam" />
+          <ScalarProperty Name="gebruiker_naam1" ColumnName="gebruiker_naam1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="products">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.product)">
+        <MappingFragment StoreEntitySet="products">
+          <ScalarProperty Name="naam" ColumnName="naam" />
+          <ScalarProperty Name="prijs" ColumnName="prijs" />
+          <ScalarProperty Name="aantal" ColumnName="aantal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="orderproduct" TypeName="Model1.orderproduct" StoreEntitySet="products">
+      <EndProperty Name="order">
+        <ScalarProperty Name="Id" ColumnName="order_Id" />
+      </EndProperty>
+      <EndProperty Name="product">
+        <ScalarProperty Name="naam" ColumnName="naam" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

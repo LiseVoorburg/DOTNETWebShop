@@ -10,3 +10,9 @@ C:\Users\koenfischer\Source\Repos\DOTNETWebShop\WcfWebShopLibrary1\obj\Debug\Wcf
 C:\Users\koenfischer\Source\Repos\DOTNETWebShop\WcfWebShopLibrary1\obj\Debug\WcfWebShopLibrary1.csproj.CoreCompileInputs.cache
 C:\Users\koenfischer\Source\Repos\DOTNETWebShop\WcfWebShopLibrary1\obj\Debug\WcfWebShopLibrary1.dll
 C:\Users\koenfischer\Source\Repos\DOTNETWebShop\WcfWebShopLibrary1\obj\Debug\WcfWebShopLibrary1.pdb
+C:\Users\koenfischer\Source\Repos\DOTNETWebShop\WcfWebShopLibrary1\bin\Debug\WcfWebShopLibrary1.dll.config
+C:\Users\koenfischer\Source\Repos\DOTNETWebShop\WcfWebShopLibrary1\bin\Debug\EntityFramework.dll
+C:\Users\koenfischer\Source\Repos\DOTNETWebShop\WcfWebShopLibrary1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\koenfischer\Source\Repos\DOTNETWebShop\WcfWebShopLibrary1\bin\Debug\EntityFramework.xml
+C:\Users\koenfischer\Source\Repos\DOTNETWebShop\WcfWebShopLibrary1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\koenfischer\Source\Repos\DOTNETWebShop\WcfWebShopLibrary1\obj\Debug\WcfWebShopLibrary1.csproj.CopyComplete

@@ -23,8 +23,8 @@ C:\Users\koenfischer\Source\Repos\DOTNETWebShop\WebShopHost\bin\Debug\WcfWebShop
 C:\Users\koenfischer\Source\Repos\DOTNETWebShop\WebShopHost\bin\Debug\WcfWebShopLibrary1.dll.config
 C:\Users\koenfischer\Source\Repos\DOTNETWebShop\WebShopHost\bin\Debug\EntityFramework.xml
 C:\Users\koenfischer\Source\Repos\DOTNETWebShop\WebShopHost\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\koenfischer\Source\Repos\DOTNETWebShop\WebShopHost\obj\Debug\WebShopHost.csprojResolveAssemblyReference.cache
 C:\Users\koenfischer\Source\Repos\DOTNETWebShop\WebShopHost\obj\Debug\WebShopHost.csproj.CoreCompileInputs.cache
 C:\Users\koenfischer\Source\Repos\DOTNETWebShop\WebShopHost\obj\Debug\WebShopHost.csproj.CopyComplete
 C:\Users\koenfischer\Source\Repos\DOTNETWebShop\WebShopHost\obj\Debug\WebShopHost.exe
 C:\Users\koenfischer\Source\Repos\DOTNETWebShop\WebShopHost\obj\Debug\WebShopHost.pdb
+C:\Users\koenfischer\Source\Repos\DOTNETWebShop\WebShopHost\obj\Debug\WebShopHost.csprojResolveAssemblyReference.cache
