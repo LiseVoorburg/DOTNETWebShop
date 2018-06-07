@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MyModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="MyModelStoreContainer">
+    <EntitySet Name="gebruikerSet" EntityType="MyModel.Store.gebruikerSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="productSet" EntityType="MyModel.Store.productSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="orderSet" EntityType="MyModel.Store.orderSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="orderproduct" EntityType="MyModel.Store.orderproduct" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_orderproduct_order" Association="MyModel.Store.FK_orderproduct_order">
+      <End Role="order" EntitySet="orderSet" />
+      <End Role="orderproduct" EntitySet="orderproduct" />
+    </AssociationSet>
+    <AssociationSet Name="FK_orderproduct_product" Association="MyModel.Store.FK_orderproduct_product">
+      <End Role="product" EntitySet="productSet" />
+      <End Role="orderproduct" EntitySet="orderproduct" />
+    </AssociationSet>
+    <AssociationSet Name="gebruikerorder" Association="MyModel.Store.gebruikerorder">
+      <End Role="gebruiker" EntitySet="gebruikerSet" />
+      <End Role="order" EntitySet="orderSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="gebruikerSet">
+    <Key>
+      <PropertyRef Name="naam" />
+    </Key>
+    <Property Name="naam" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="wachtwoord" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="saldo" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="productSet">
+    <Key>
+      <PropertyRef Name="naam" />
+    </Key>
+    <Property Name="naam" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="prijs" Type="int" Nullable="false" />
+    <Property Name="aantal" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="orderSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="naamProduct" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="aantal" Type="int" Nullable="false" />
+    <Property Name="gebruiker_naam" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="orderproduct">
+    <Key>
+      <PropertyRef Name="order_Id" />
+      <PropertyRef Name="product_naam" />
+    </Key>
+    <Property Name="order_Id" Type="int" Nullable="false" />
+    <Property Name="product_naam" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="gebruikerorder">
+    <End Role="gebruiker" Type="MyModel.Store.gebruikerSet" Multiplicity="1" />
+    <End Role="order" Type="MyModel.Store.orderSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="gebruiker">
+        <PropertyRef Name="naam" />
+      </Principal>
+      <Dependent Role="order">
+        <PropertyRef Name="gebruiker_naam" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_orderproduct_order">
+    <End Role="order" Type="MyModel.Store.orderSet" Multiplicity="1" />
+    <End Role="orderproduct" Type="MyModel.Store.orderproduct" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="order">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="orderproduct">
+        <PropertyRef Name="order_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_orderproduct_product">
+    <End Role="orderproduct" Type="MyModel.Store.orderproduct" Multiplicity="*" />
+    <End Role="product" Type="MyModel.Store.productSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="product">
+        <PropertyRef Name="naam" />
+      </Principal>
+      <Dependent Role="orderproduct">
+        <PropertyRef Name="product_naam" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
