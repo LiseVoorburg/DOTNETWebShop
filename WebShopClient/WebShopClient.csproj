@@ -83,5 +83,11 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WcfWebShopLibrary1\WcfWebShopLibrary1.csproj">
+      <Project>{9ceb7796-c3a0-4aa8-8d9a-a4f08a01d04a}</Project>
+      <Name>WcfWebShopLibrary1</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

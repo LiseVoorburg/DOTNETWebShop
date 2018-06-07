@@ -12,6 +12,8 @@ namespace WcfWebShopLibrary
     public interface IWebShopService
     {
         [OperationContract]
-        void PostNote(string from, string note);
+        void PostNote(string from, string note);
+        [OperationContract]
+        string Test(String s);
     }
 }

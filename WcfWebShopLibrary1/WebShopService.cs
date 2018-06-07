@@ -11,9 +11,19 @@ namespace WcfWebShopLibrary
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "WebShopService" in both code and config file together.
     public class WebShopService : IWebShopService
     {
+        string test = "kak";
+        string s;
+
         public void PostNote(string from, string note)
         {
             Debug.WriteLine("{0}: {1}", from, note);
+        }
+
+
+        public string Test(string k)
+        {
+            s = k;
+            return test;
         }
 
     }
