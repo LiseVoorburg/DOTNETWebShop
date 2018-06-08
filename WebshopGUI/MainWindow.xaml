@@ -23,17 +23,18 @@
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="150" Margin="10,37,0,0" Grid.Row="1" VerticalAlignment="Top" Width="185"/>
         <ListBox Name="Products_ForSale_ListBox" HorizontalAlignment="Left" Height="155" Margin="541,106,0,0" VerticalAlignment="Top" Width="194" Grid.RowSpan="2"/>
         <Label Content="Products" HorizontalAlignment="Left" Margin="608,75,0,0" VerticalAlignment="Top"/>
-        <Button Name="Buy_Button" Content="Buy" HorizontalAlignment="Left" Margin="541,81,0,0" Grid.Row="1" VerticalAlignment="Top" Width="74" Click="Buy_Button_Click"/>
-        <Button Name="Refresh_Button" Content="refresh" HorizontalAlignment="Left" Margin="661,81,0,0" Grid.Row="1" VerticalAlignment="Top" Width="74" Click="Refresh_Button_Click"/>
-        <ListBox HorizontalAlignment="Left" Height="155" Margin="308,106,0,0" VerticalAlignment="Top" Width="171" Grid.RowSpan="2"/>
+        <Button Name="Buy_Button" Content="Buy" HorizontalAlignment="Left" Margin="541,101,0,0" Grid.Row="1" VerticalAlignment="Top" Width="74" Click="Buy_Button_Click"/>
+        <Button Name="Refresh_Button" Content="refresh" HorizontalAlignment="Left" Margin="661,104,0,0" Grid.Row="1" VerticalAlignment="Top" Width="74" Click="Refresh_Button_Click"/>
+        <ListBox Name="Product_Inventory_ListBox" HorizontalAlignment="Left" Height="155" Margin="308,106,0,0" VerticalAlignment="Top" Width="171" Grid.RowSpan="2"/>
         <Label Content="Inventory" HorizontalAlignment="Left" Margin="364,75,0,0" VerticalAlignment="Top"/>
         <Label Content="User: " HorizontalAlignment="Left" Margin="308,73,0,0" Grid.Row="1" VerticalAlignment="Top"/>
         <Label Name="User_Label" Content="" HorizontalAlignment="Left" Margin="364,73,0,0" Grid.Row="1" VerticalAlignment="Top"/>
         <Label Content="Moneyz: €" HorizontalAlignment="Left" Margin="308,101,0,0" Grid.Row="1" VerticalAlignment="Top"/>
         <Label Name="Saldo_Label" Content="0.0" HorizontalAlignment="Left" Margin="372,101,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-        <Border x:Name="selection" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="294" Margin="267,43,0,0" VerticalAlignment="Top" Width="493" Grid.RowSpan="2"/>
+        <Border x:Name="selection" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="294" Margin="281,60,0,0" VerticalAlignment="Top" Width="493" Grid.RowSpan="2"/>
         <Label Content="Password:" HorizontalAlignment="Left" Margin="19,101,0,0" Grid.Row="1" VerticalAlignment="Top"/>
         <Label Name="Register_Password_Label" Content="" HorizontalAlignment="Left" Margin="86,101,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        
 
     </Grid>
 </Window>

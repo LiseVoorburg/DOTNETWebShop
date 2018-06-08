@@ -2,15 +2,15 @@
 <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="WebshopModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
   <EntityContainer Name="WebshopModelContainer" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Gebruikers" EntityType="WebshopModel.Gebruiker" />
-    <EntitySet Name="Orders" EntityType="WebshopModel.Order" />
+    <EntitySet Name="Inventories" EntityType="WebshopModel.Inventory" />
     <EntitySet Name="Products" EntityType="WebshopModel.Product" />
     <AssociationSet Name="GebruikerOrder" Association="WebshopModel.GebruikerOrder">
       <End Role="Gebruiker" EntitySet="Gebruikers" />
-      <End Role="Order" EntitySet="Orders" />
+      <End Role="Order" EntitySet="Inventories" />
     </AssociationSet>
     <EntitySet Name="OrderRegels" EntityType="WebshopModel.OrderRegel" />
     <AssociationSet Name="OrderOrderRegel" Association="WebshopModel.OrderOrderRegel">
-      <End Role="Order" EntitySet="Orders" />
+      <End Role="Order" EntitySet="Inventories" />
       <End Role="OrderRegel" EntitySet="OrderRegels" />
     </AssociationSet>
     <AssociationSet Name="OrderRegelProduct" Association="WebshopModel.OrderRegelProduct">
@@ -23,19 +23,18 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Wachtwoord" Type="String" Nullable="false" />
+    <Property Name="Wachtwoord" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="Saldo" Type="Double" Nullable="false" />
     <NavigationProperty Name="Order" Relationship="WebshopModel.GebruikerOrder" FromRole="Gebruiker" ToRole="Order" />
-    <Property Name="Naam" Type="String" Nullable="false" />
+    <Property Name="Naam" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
   </EntityType>
-  <EntityType Name="Order">
+  <EntityType Name="Inventory">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Datum" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Gebruiker" Relationship="WebshopModel.GebruikerOrder" FromRole="Order" ToRole="Gebruiker" />
-    <Property Name="GebruikerId" Type="String" Nullable="false" />
+    <Property Name="GebruikerId" Type="Int32" Nullable="false" />
     <NavigationProperty Name="OrderRegel" Relationship="WebshopModel.OrderOrderRegel" FromRole="Order" ToRole="OrderRegel" />
   </EntityType>
   <EntityType Name="Product">
@@ -44,12 +43,13 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Prijs" Type="Double" Nullable="false" />
-    <Property Name="Naam" Type="String" Nullable="false" />
+    <Property Name="Naam" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="OrderRegel" Relationship="WebshopModel.OrderRegelProduct" FromRole="Product" ToRole="OrderRegel" />
+    <Property Name="Aantal" Type="Int32" Nullable="false" />
   </EntityType>
   <Association Name="GebruikerOrder">
     <End Type="WebshopModel.Gebruiker" Role="Gebruiker" Multiplicity="1" />
-    <End Type="WebshopModel.Order" Role="Order" Multiplicity="*" />
+    <End Type="WebshopModel.Inventory" Role="Order" Multiplicity="0..1" />
   </Association>
   <EntityType Name="OrderRegel">
     <Key>
@@ -57,12 +57,12 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Aantal" Type="Int32" Nullable="false" />
-    <Property Name="OrderId" Type="Int32" Nullable="false" />
+    <Property Name="InventoryId" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Order" Relationship="WebshopModel.OrderOrderRegel" FromRole="OrderRegel" ToRole="Order" />
     <NavigationProperty Name="Product" Relationship="WebshopModel.OrderRegelProduct" FromRole="OrderRegel" ToRole="Product" />
   </EntityType>
   <Association Name="OrderOrderRegel">
-    <End Type="WebshopModel.Order" Role="Order" Multiplicity="1" />
+    <End Type="WebshopModel.Inventory" Role="Order" Multiplicity="1" />
     <End Type="WebshopModel.OrderRegel" Role="OrderRegel" Multiplicity="*" />
   </Association>
   <Association Name="OrderRegelProduct">

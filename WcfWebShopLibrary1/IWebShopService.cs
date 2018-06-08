@@ -20,7 +20,7 @@ namespace WcfWebShopLibrary
         [OperationContract]
         List<Product> getProducten();
         [OperationContract]
-        Gebruiker KoopProduct(Gebruiker gebruiker, Product product, int aantal);
+        Gebruiker KoopProduct(Gebruiker gebruiker, Product product);
 
     }
 }

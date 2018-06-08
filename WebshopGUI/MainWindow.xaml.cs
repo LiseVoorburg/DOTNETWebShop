@@ -41,6 +41,8 @@ namespace WebshopGUI
 
         private void Login_Button_Click(object sender, RoutedEventArgs e)
         {
+
+            
             ingelogd = winkelService.Login(Login_Username_Textbox.Text, Login_Password_Textbox.Text);
             List<Product> producten = winkelService.getProducten();
             if (ingelogd != null)
@@ -50,7 +52,6 @@ namespace WebshopGUI
 
                 foreach (Product p in producten)
                 {
-                    string s = "naam: " + p.Naam + ", prijs: " + p.Prijs;
                     Products_ForSale_ListBox.Items.Add(p);
                 }
                 
@@ -77,24 +78,27 @@ namespace WebshopGUI
 
         private void Buy_Button_Click(object sender, RoutedEventArgs e)
         {
-            Debug.WriteLine(ingelogd.Saldo);
             Product product = Products_ForSale_ListBox.SelectedItem as Product;
 
-            Debug.WriteLine(product.Naam);
-            //ingelogd = winkelService.KoopProduct(ingelogd, , 5);
-            if (ingelogd.Saldo != 0)
+            if (ingelogd.Saldo == 0 || product.Prijs > ingelogd.Saldo)
             {
+                MessageBox.Show("fuck you cheap bitch!");
+            } else
+            {
+                ingelogd = winkelService.KoopProduct(ingelogd, product);
                 Saldo_Label.Content = ingelogd.Saldo;
-            } else {
+                foreach (OrderRegel or in ingelogd.Order.OrderRegel)
+                {
+                    Product_Inventory_ListBox.Items.Add(or);
+                }
                 
-                MessageBox.Show("Fuck you skere bitch!");
+                
             }
-            
         }
 
         private void Refresh_Button_Click(object sender, RoutedEventArgs e)
         {
-
+           
         }
 
 

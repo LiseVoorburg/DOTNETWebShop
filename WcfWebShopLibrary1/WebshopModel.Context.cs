@@ -26,7 +26,7 @@ namespace WcfWebShopLibrary
         }
     
         public virtual DbSet<Gebruiker> Gebruikers { get; set; }
-        public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<Inventory> Inventories { get; set; }
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<OrderRegel> OrderRegels { get; set; }
     }

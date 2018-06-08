@@ -23,13 +23,14 @@ namespace WcfWebShopLibrary
         public int Id { get; set; }
         public double Prijs { get; set; }
         public string Naam { get; set; }
+        public int Aantal { get; set; }
 
         override
-        public String ToString()
+        public string ToString()
         {
-            return "naam: " + Naam + ", prijs: " + Prijs;
+            return "naam: " + Naam + ", prijs: " + Prijs + ", aantal: " + Aantal;
         }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderRegel> OrderRegel { get; set; }
     }

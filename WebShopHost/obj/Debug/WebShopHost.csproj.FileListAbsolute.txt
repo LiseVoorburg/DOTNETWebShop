@@ -27,3 +27,4 @@ C:\Users\koenfischer\Source\Repos\DOTNETWebShop\WebShopHost\obj\Debug\WebShopHos
 C:\Users\koenfischer\Source\Repos\DOTNETWebShop\WebShopHost\obj\Debug\WebShopHost.csproj.CopyComplete
 C:\Users\koenfischer\Source\Repos\DOTNETWebShop\WebShopHost\obj\Debug\WebShopHost.exe
 C:\Users\koenfischer\Source\Repos\DOTNETWebShop\WebShopHost\obj\Debug\WebShopHost.pdb
+C:\Users\koenfischer\source\repos\DOTNETWebShop\WebShopHost\obj\Debug\WebShopHost.csprojResolveAssemblyReference.cache

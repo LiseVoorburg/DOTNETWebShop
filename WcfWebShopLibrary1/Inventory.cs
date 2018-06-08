@@ -12,17 +12,16 @@ namespace WcfWebShopLibrary
     using System;
     using System.Collections.Generic;
     
-    public partial class Order
+    public partial class Inventory
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Order()
+        public Inventory()
         {
             this.OrderRegel = new HashSet<OrderRegel>();
         }
     
         public int Id { get; set; }
-        public int Datum { get; set; }
-        public string GebruikerId { get; set; }
+        public int GebruikerId { get; set; }
     
         public virtual Gebruiker Gebruiker { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

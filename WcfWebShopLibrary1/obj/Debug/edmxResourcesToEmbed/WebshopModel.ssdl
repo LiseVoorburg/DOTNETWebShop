@@ -2,15 +2,15 @@
 <Schema Namespace="WebshopModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityContainer Name="WebshopModelStoreContainer">
     <EntitySet Name="Gebruikers" EntityType="WebshopModel.Store.Gebruikers" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Orders" EntityType="WebshopModel.Store.Orders" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Inventories" EntityType="WebshopModel.Store.Inventories" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Products" EntityType="WebshopModel.Store.Products" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="OrderRegels" EntityType="WebshopModel.Store.OrderRegels" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="GebruikerOrder" Association="WebshopModel.Store.GebruikerOrder">
       <End Role="Gebruiker" EntitySet="Gebruikers" />
-      <End Role="Order" EntitySet="Orders" />
+      <End Role="Order" EntitySet="Inventories" />
     </AssociationSet>
     <AssociationSet Name="OrderOrderRegel" Association="WebshopModel.Store.OrderOrderRegel">
-      <End Role="Order" EntitySet="Orders" />
+      <End Role="Order" EntitySet="Inventories" />
       <End Role="OrderRegel" EntitySet="OrderRegels" />
     </AssociationSet>
     <AssociationSet Name="OrderRegelProduct" Association="WebshopModel.Store.OrderRegelProduct">
@@ -27,13 +27,12 @@
     <Property Name="Saldo" Type="float" Nullable="false" />
     <Property Name="Naam" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
-  <EntityType Name="Orders">
+  <EntityType Name="Inventories">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Datum" Type="int" Nullable="false" />
-    <Property Name="GebruikerId" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="GebruikerId" Type="int" Nullable="false" />
     <Property Name="Gebruiker_Id" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Products">
@@ -43,6 +42,7 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Prijs" Type="float" Nullable="false" />
     <Property Name="Naam" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Aantal" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="OrderRegels">
     <Key>
@@ -50,13 +50,13 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Aantal" Type="int" Nullable="false" />
-    <Property Name="OrderId" Type="int" Nullable="false" />
+    <Property Name="InventoryId" Type="int" Nullable="false" />
     <Property Name="Order_Id" Type="int" Nullable="false" />
     <Property Name="Product_Id" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="GebruikerOrder">
     <End Role="Gebruiker" Type="WebshopModel.Store.Gebruikers" Multiplicity="1" />
-    <End Role="Order" Type="WebshopModel.Store.Orders" Multiplicity="*" />
+    <End Role="Order" Type="WebshopModel.Store.Inventories" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Gebruiker">
         <PropertyRef Name="Id" />
@@ -67,7 +67,7 @@
     </ReferentialConstraint>
   </Association>
   <Association Name="OrderOrderRegel">
-    <End Role="Order" Type="WebshopModel.Store.Orders" Multiplicity="1" />
+    <End Role="Order" Type="WebshopModel.Store.Inventories" Multiplicity="1" />
     <End Role="OrderRegel" Type="WebshopModel.Store.OrderRegels" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="Order">

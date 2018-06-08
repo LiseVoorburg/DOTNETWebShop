@@ -11,11 +11,10 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Orders">
-      <EntityTypeMapping TypeName="IsTypeOf(WebshopModel.Order)">
-        <MappingFragment StoreEntitySet="Orders">
+    <EntitySetMapping Name="Inventories">
+      <EntityTypeMapping TypeName="IsTypeOf(WebshopModel.Inventory)">
+        <MappingFragment StoreEntitySet="Inventories">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Datum" ColumnName="Datum" />
           <ScalarProperty Name="GebruikerId" ColumnName="GebruikerId" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -26,6 +25,7 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Prijs" ColumnName="Prijs" />
           <ScalarProperty Name="Naam" ColumnName="Naam" />
+          <ScalarProperty Name="Aantal" ColumnName="Aantal" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -34,11 +34,11 @@
         <MappingFragment StoreEntitySet="OrderRegels">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Aantal" ColumnName="Aantal" />
-          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="InventoryId" ColumnName="InventoryId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="GebruikerOrder" TypeName="WebshopModel.GebruikerOrder" StoreEntitySet="Orders">
+    <AssociationSetMapping Name="GebruikerOrder" TypeName="WebshopModel.GebruikerOrder" StoreEntitySet="Inventories">
       <EndProperty Name="Gebruiker">
         <ScalarProperty Name="Id" ColumnName="Gebruiker_Id" />
       </EndProperty>

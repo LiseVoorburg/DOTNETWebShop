@@ -37,6 +37,7 @@ namespace WcfWebShopLibrary
         {
             using (WebshopModelContainer ctx = new WebshopModelContainer())
             {
+
                 var gebruikers = from p in ctx.Gebruikers select p;
                 foreach (Gebruiker p in gebruikers)
                 {
@@ -63,23 +64,39 @@ namespace WcfWebShopLibrary
             return producten;
         }
 
-        public Gebruiker KoopProduct(Gebruiker gebruiker, Product product, int aantal)
+
+        public Gebruiker KoopProduct(Gebruiker gebruiker, Product product)
         {
             using (WebshopModelContainer ctx = new WebshopModelContainer())
             {
                 Product ptCtx = ctx.Products.Find(product.Id);
+                Debug.WriteLine(ptCtx.Naam);
                 Gebruiker gbCtx = ctx.Gebruikers.Find(gebruiker.Id);
+                Debug.WriteLine(gbCtx.Naam);
+                Debug.WriteLine("gebruiker:" + gbCtx.Saldo);
                 try
                 {
-                    Order o = new Order { Datum = 1111, Gebruiker = gebruiker };
-                    OrderRegel or = new OrderRegel { Aantal = aantal, Product = product, Order = o };
-                    o.OrderRegel.Add(or);
+                    bool bestaat = false;
+                    foreach (Inventory inv in ctx.Inventories)
+                    {
+                        if (inv.GebruikerId == gebruiker.Id)
+                        {
+                            bestaat = true;
+                        }
+                    }
+                    Inventory i = null;
+                    if (!bestaat) {
+                        i = new Inventory { GebruikerId = gebruiker.Id };
+                        ctx.Inventories.Add(i);
+                    }
                     
-                    if (gbCtx.Saldo >= (ptCtx.Prijs * aantal) && !(gbCtx.Saldo < 0)) {
-                        gbCtx.Saldo -= (ptCtx.Prijs * aantal);
-                    } 
-                    
-                    
+                    OrderRegel or = new OrderRegel { Aantal = 1, Product = product, Order = i};
+                    i.OrderRegel.Add(or);
+                    ptCtx.Aantal -= 1;
+                    ctx.OrderRegels.Add(or);
+                    if (gbCtx.Saldo >= (ptCtx.Prijs) && !(gbCtx.Saldo < 0)) {
+                        gbCtx.Saldo -= (ptCtx.Prijs);
+                    }
                     ctx.SaveChanges();
                 } catch
                 {

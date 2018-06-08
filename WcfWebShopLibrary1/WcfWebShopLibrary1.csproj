@@ -55,10 +55,10 @@
     <Compile Include="Gebruiker.cs">
       <DependentUpon>WebshopModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="IWebShopService.cs" />
-    <Compile Include="Order.cs">
+    <Compile Include="Inventory.cs">
       <DependentUpon>WebshopModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="IWebShopService.cs" />
     <Compile Include="OrderRegel.cs">
       <DependentUpon>WebshopModel.tt</DependentUpon>
     </Compile>

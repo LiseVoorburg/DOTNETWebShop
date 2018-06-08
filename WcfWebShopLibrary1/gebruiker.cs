@@ -14,18 +14,11 @@ namespace WcfWebShopLibrary
     
     public partial class Gebruiker
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Gebruiker()
-        {
-            this.Order = new HashSet<Order>();
-        }
-    
         public int Id { get; set; }
         public string Wachtwoord { get; set; }
         public double Saldo { get; set; }
         public string Naam { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Order> Order { get; set; }
+        public virtual Inventory Order { get; set; }
     }
 }
