@@ -13,10 +13,10 @@ namespace WcfWebShopLibrary
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Model1Container : DbContext
+    public partial class WebshopModelContainer : DbContext
     {
-        public Model1Container()
-            : base("name=Model1Container")
+        public WebshopModelContainer()
+            : base("name=WebshopModelContainer")
         {
         }
     
@@ -25,9 +25,9 @@ namespace WcfWebShopLibrary
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<gebruiker> gebruikers { get; set; }
-        public virtual DbSet<order> orders { get; set; }
-        public virtual DbSet<product> products { get; set; }
-
+        public virtual DbSet<Gebruiker> Gebruikers { get; set; }
+        public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
+        public virtual DbSet<OrderRegel> OrderRegels { get; set; }
     }
 }

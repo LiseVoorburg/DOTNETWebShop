@@ -6,7 +6,6 @@ C:\Users\lisev\source\repos\WcfWebShopLibrary1\WcfWebShopLibrary1\obj\Debug\WcfW
 C:\Users\lisev\source\repos\WcfWebShopLibrary1\WcfWebShopLibrary1\obj\Debug\WcfWebShopLibrary1.pdb
 C:\Users\koenfischer\Source\Repos\DOTNETWebShop\WcfWebShopLibrary1\bin\Debug\WcfWebShopLibrary1.dll
 C:\Users\koenfischer\Source\Repos\DOTNETWebShop\WcfWebShopLibrary1\bin\Debug\WcfWebShopLibrary1.pdb
-C:\Users\koenfischer\Source\Repos\DOTNETWebShop\WcfWebShopLibrary1\obj\Debug\WcfWebShopLibrary1.csprojResolveAssemblyReference.cache
 C:\Users\koenfischer\Source\Repos\DOTNETWebShop\WcfWebShopLibrary1\obj\Debug\WcfWebShopLibrary1.csproj.CoreCompileInputs.cache
 C:\Users\koenfischer\Source\Repos\DOTNETWebShop\WcfWebShopLibrary1\obj\Debug\WcfWebShopLibrary1.dll
 C:\Users\koenfischer\Source\Repos\DOTNETWebShop\WcfWebShopLibrary1\obj\Debug\WcfWebShopLibrary1.pdb

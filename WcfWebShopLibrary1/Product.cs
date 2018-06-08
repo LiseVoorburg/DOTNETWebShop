@@ -12,19 +12,19 @@ namespace WcfWebShopLibrary
     using System;
     using System.Collections.Generic;
     
-    public partial class product
+    public partial class Product
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public product()
+        public Product()
         {
-            this.orders = new HashSet<order>();
+            this.OrderRegel = new HashSet<OrderRegel>();
         }
     
-        public string naam { get; set; }
-        public double prijs { get; set; }
-        public int aantal { get; set; }
+        public int Id { get; set; }
+        public double Prijs { get; set; }
+        public string Naam { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<order> orders { get; set; }
+        public virtual ICollection<OrderRegel> OrderRegel { get; set; }
     }
 }

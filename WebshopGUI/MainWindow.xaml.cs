@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using System.ServiceModel;
 using WcfWebShopLibrary;
 using WebShopHost;
+using System.Diagnostics;
 
 namespace WebshopGUI
 {
@@ -32,7 +33,7 @@ namespace WebshopGUI
 
         private void Login_Button_Click(object sender, RoutedEventArgs e)
         {
-
+            Debug.WriteLine("test");
             Login_Button.Content = winkelService.Test("hoi");
 
         }

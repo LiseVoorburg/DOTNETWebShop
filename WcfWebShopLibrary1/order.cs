@@ -12,21 +12,20 @@ namespace WcfWebShopLibrary
     using System;
     using System.Collections.Generic;
     
-    public partial class order
+    public partial class Order
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public order()
+        public Order()
         {
-            this.products = new HashSet<product>();
+            this.OrderRegel = new HashSet<OrderRegel>();
         }
     
         public int Id { get; set; }
-        public int aantal { get; set; }
-        public string product_naam { get; set; }
-        public string gebruiker_naam1 { get; set; }
+        public int Datum { get; set; }
+        public string GebruikerId { get; set; }
     
-        public virtual gebruiker gebruiker { get; set; }
+        public virtual Gebruiker Gebruiker { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<product> products { get; set; }
+        public virtual ICollection<OrderRegel> OrderRegel { get; set; }
     }
 }

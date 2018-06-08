@@ -17,23 +17,31 @@ namespace WcfWebShopLibrary
         public void PostNote(string from, string note)
         {
             Debug.WriteLine("{0}: {1}", from, note);
+
         }
 
 
-        public string Test(string k)
+
+public string Test(string k)
         {
-            using (Model1Container ctx = new Model1Container())
+            Debug.WriteLine("methode");
+            using (WebshopModelContainer ctx = new WebshopModelContainer())
             {
-                product p1 = new product { naam = "appel", prijs = 1, aantal = 10 };
-                product p2 = new product { naam = "peer", prijs = 2, aantal = 10 };
-                ctx.products.Add(p1);
-                ctx.products.Add(p2);
+                Debug.WriteLine("in using..");
+                Product p1 = new Product { Id = 1, Naam = "appel", Prijs = 1 };
+                Debug.WriteLine("product 1 is gemaakt..");
+                Product p2 = new Product { Id = 2, Naam = "peer", Prijs = 2 };
+                ctx.Products.Add(p1);
+
+                ctx.Products.Add(p2);
                 //product p3 = ctx.products.Find("henk");
                 ctx.SaveChanges();
 
                 //s = k;
-                return "kak";
-            }
+
+            };
+
+            return "test";
         }
 
     }
