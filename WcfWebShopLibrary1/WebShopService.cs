@@ -11,8 +11,6 @@ namespace WcfWebShopLibrary
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "WebShopService" in both code and config file together.
     public class WebShopService : IWebShopService
     {
-        //string test = "kak";
-        string s;
 
         public bool RegisterUser(string username, string password)
         {
@@ -51,6 +49,46 @@ namespace WcfWebShopLibrary
             return null;
         }
 
+        public List<Product> getProducten()
+        {
+            List<Product> producten = new List<Product>();
+            using (WebshopModelContainer ctx = new WebshopModelContainer())
+            {
+                var products = from p in ctx.Products select p;
+                foreach (Product p in products)
+                {
+                    producten.Add(p);
+                }
+            }
+            return producten;
+        }
+
+        public Gebruiker KoopProduct(Gebruiker gebruiker, Product product, int aantal)
+        {
+            using (WebshopModelContainer ctx = new WebshopModelContainer())
+            {
+                Product ptCtx = ctx.Products.Find(product.Id);
+                Gebruiker gbCtx = ctx.Gebruikers.Find(gebruiker.Id);
+                try
+                {
+                    Order o = new Order { Datum = 1111, Gebruiker = gebruiker };
+                    OrderRegel or = new OrderRegel { Aantal = aantal, Product = product, Order = o };
+                    o.OrderRegel.Add(or);
+                    
+                    if (gbCtx.Saldo >= (ptCtx.Prijs * aantal) && !(gbCtx.Saldo < 0)) {
+                        gbCtx.Saldo -= (ptCtx.Prijs * aantal);
+                    } 
+                    
+                    
+                    ctx.SaveChanges();
+                } catch
+                {
+                    Debug.WriteLine("kaka");
+                }
+                return gbCtx;
+
+            }
+        }
 
         public string Test(string k)
         {

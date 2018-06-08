@@ -31,7 +31,7 @@
         <Label Name="User_Label" Content="" HorizontalAlignment="Left" Margin="364,73,0,0" Grid.Row="1" VerticalAlignment="Top"/>
         <Label Content="Moneyz: €" HorizontalAlignment="Left" Margin="308,101,0,0" Grid.Row="1" VerticalAlignment="Top"/>
         <Label Name="Saldo_Label" Content="0.0" HorizontalAlignment="Left" Margin="372,101,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="294" Margin="276,60,0,0" VerticalAlignment="Top" Width="493" Grid.RowSpan="2"/>
+        <Border x:Name="selection" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="294" Margin="267,43,0,0" VerticalAlignment="Top" Width="493" Grid.RowSpan="2"/>
         <Label Content="Password:" HorizontalAlignment="Left" Margin="19,101,0,0" Grid.Row="1" VerticalAlignment="Top"/>
         <Label Name="Register_Password_Label" Content="" HorizontalAlignment="Left" Margin="86,101,0,0" Grid.Row="1" VerticalAlignment="Top"/>
 

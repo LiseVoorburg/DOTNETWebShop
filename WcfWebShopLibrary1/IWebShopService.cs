@@ -17,5 +17,10 @@ namespace WcfWebShopLibrary
         string Test(String s);
         [OperationContract]
         Gebruiker Login(string username, string password);
+        [OperationContract]
+        List<Product> getProducten();
+        [OperationContract]
+        Gebruiker KoopProduct(Gebruiker gebruiker, Product product, int aantal);
+
     }
 }

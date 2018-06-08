@@ -16,7 +16,7 @@ namespace WebShopHost
             using (ServiceHost host = new ServiceHost(typeof(WebShopService)))
             {
                 host.Open();
-                Console.WriteLine("doet et");
+                Console.ReadKey();
                 
             }
             

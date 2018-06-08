@@ -30,14 +30,33 @@ namespace WebshopGUI
         }
 
         IWebShopService winkelService = new WebShopService();
+        Gebruiker ingelogd;
+
+        public static string ReverseString(string s)
+        {
+            char[] arr = s.ToCharArray();
+            Array.Reverse(arr);
+            return new string(arr);
+        }
 
         private void Login_Button_Click(object sender, RoutedEventArgs e)
         {
-            Gebruiker g1 = winkelService.Login(Login_Username_Textbox.Text, Login_Password_Textbox.Text);
-            if (g1 != null)
+            ingelogd = winkelService.Login(Login_Username_Textbox.Text, Login_Password_Textbox.Text);
+            List<Product> producten = winkelService.getProducten();
+            if (ingelogd != null)
             {
-                User_Label.Content = g1.Naam;
-                Saldo_Label.Content = g1.Saldo;
+                User_Label.Content = ingelogd.Naam;
+                Saldo_Label.Content = ingelogd.Saldo;
+
+                foreach (Product p in producten)
+                {
+                    string s = "naam: " + p.Naam + ", prijs: " + p.Prijs;
+                    Products_ForSale_ListBox.Items.Add(p);
+                }
+                
+            } else
+            {
+                MessageBox.Show("Verkeerde inlog kut!");
             }
 
         }
@@ -52,23 +71,25 @@ namespace WebshopGUI
             {
                 MessageBox.Show("fuck you vieze hacker!");
             }
-            
-            
-           
-            
-           
         }
 
-        public static string ReverseString(string s)
-        {
-            char[] arr = s.ToCharArray();
-            Array.Reverse(arr);
-            return new string(arr);
-        }
+
 
         private void Buy_Button_Click(object sender, RoutedEventArgs e)
         {
+            Debug.WriteLine(ingelogd.Saldo);
+            Product product = Products_ForSale_ListBox.SelectedItem as Product;
 
+            Debug.WriteLine(product.Naam);
+            //ingelogd = winkelService.KoopProduct(ingelogd, , 5);
+            if (ingelogd.Saldo != 0)
+            {
+                Saldo_Label.Content = ingelogd.Saldo;
+            } else {
+                
+                MessageBox.Show("Fuck you skere bitch!");
+            }
+            
         }
 
         private void Refresh_Button_Click(object sender, RoutedEventArgs e)
