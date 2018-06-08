@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="Model1" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+  <EntityContainer Name="Model1Container" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="gebruikers1" EntityType="Model1.gebruiker" />
+    <EntitySet Name="orders" EntityType="Model1.order" />
+    <EntitySet Name="products" EntityType="Model1.product" />
+    <AssociationSet Name="gebruikerorder" Association="Model1.gebruikerorder">
+      <End Role="gebruiker" EntitySet="gebruikers1" />
+      <End Role="order" EntitySet="orders" />
+    </AssociationSet>
+    <AssociationSet Name="orderproduct" Association="Model1.orderproduct">
+      <End Role="order" EntitySet="orders" />
+      <End Role="product" EntitySet="products" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="gebruiker">
+    <Key>
+      <PropertyRef Name="naam" />
+    </Key>
+    <Property Name="naam" Type="String" Nullable="false" annotation:StoreGeneratedPattern="None" />
+    <Property Name="wachtwoord" Type="String" Nullable="false" />
+    <Property Name="saldo" Type="Double" Nullable="false" />
+    <NavigationProperty Name="orders" Relationship="Model1.gebruikerorder" FromRole="gebruiker" ToRole="order" />
+  </EntityType>
+  <EntityType Name="order">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
+    <Property Name="aantal" Type="Int32" Nullable="false" />
+    <Property Name="product_naam" Type="String" Nullable="false" />
+    <NavigationProperty Name="gebruiker" Relationship="Model1.gebruikerorder" FromRole="order" ToRole="gebruiker" />
+    <Property Name="gebruiker_naam1" Type="String" Nullable="false" />
+    <NavigationProperty Name="products" Relationship="Model1.orderproduct" FromRole="order" ToRole="product" />
+  </EntityType>
+  <EntityType Name="product">
+    <Key>
+      <PropertyRef Name="naam" />
+    </Key>
+    <Property Name="naam" Type="String" Nullable="false" annotation:StoreGeneratedPattern="None" />
+    <Property Name="prijs" Type="Double" Nullable="false" />
+    <Property Name="aantal" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="order" Relationship="Model1.orderproduct" FromRole="product" ToRole="order" />
+  </EntityType>
+  <Association Name="gebruikerorder">
+    <End Type="Model1.gebruiker" Role="gebruiker" Multiplicity="1" />
+    <End Type="Model1.order" Role="order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="gebruiker">
+        <PropertyRef Name="naam" />
+      </Principal>
+      <Dependent Role="order">
+        <PropertyRef Name="gebruiker_naam1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="orderproduct">
+    <End Type="Model1.order" Role="order" Multiplicity="1" />
+    <End Type="Model1.product" Role="product" Multiplicity="*" />
+  </Association>
+</Schema>

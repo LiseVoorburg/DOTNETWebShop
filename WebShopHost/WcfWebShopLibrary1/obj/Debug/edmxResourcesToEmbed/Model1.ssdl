@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model1.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Model1StoreContainer">
+    <EntitySet Name="gebruikers1" EntityType="Model1.Store.gebruikers1" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="orders" EntityType="Model1.Store.orders" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="products" EntityType="Model1.Store.products" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="gebruikerorder" Association="Model1.Store.gebruikerorder">
+      <End Role="gebruiker" EntitySet="gebruikers1" />
+      <End Role="order" EntitySet="orders" />
+    </AssociationSet>
+    <AssociationSet Name="orderproduct" Association="Model1.Store.orderproduct">
+      <End Role="order" EntitySet="orders" />
+      <End Role="product" EntitySet="products" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="gebruikers1">
+    <Key>
+      <PropertyRef Name="naam" />
+    </Key>
+    <Property Name="naam" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="wachtwoord" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="saldo" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="orders">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="aantal" Type="int" Nullable="false" />
+    <Property Name="product_naam" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="gebruiker_naam1" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="products">
+    <Key>
+      <PropertyRef Name="naam" />
+    </Key>
+    <Property Name="naam" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="prijs" Type="float" Nullable="false" />
+    <Property Name="aantal" Type="int" Nullable="false" />
+    <Property Name="order_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="gebruikerorder">
+    <End Role="gebruiker" Type="Model1.Store.gebruikers1" Multiplicity="1" />
+    <End Role="order" Type="Model1.Store.orders" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="gebruiker">
+        <PropertyRef Name="naam" />
+      </Principal>
+      <Dependent Role="order">
+        <PropertyRef Name="gebruiker_naam1" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="orderproduct">
+    <End Role="order" Type="Model1.Store.orders" Multiplicity="1" />
+    <End Role="product" Type="Model1.Store.products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="order">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="product">
+        <PropertyRef Name="order_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WebshopModelStoreContainer" CdmEntityContainer="WebshopModelContainer">
+    <EntitySetMapping Name="Gebruikers">
+      <EntityTypeMapping TypeName="IsTypeOf(WebshopModel.Gebruiker)">
+        <MappingFragment StoreEntitySet="Gebruikers">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Wachtwoord" ColumnName="Wachtwoord" />
+          <ScalarProperty Name="Saldo" ColumnName="Saldo" />
+          <ScalarProperty Name="Naam" ColumnName="Naam" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Orders">
+      <EntityTypeMapping TypeName="IsTypeOf(WebshopModel.Order)">
+        <MappingFragment StoreEntitySet="Orders">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Datum" ColumnName="Datum" />
+          <ScalarProperty Name="GebruikerId" ColumnName="GebruikerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Products">
+      <EntityTypeMapping TypeName="IsTypeOf(WebshopModel.Product)">
+        <MappingFragment StoreEntitySet="Products">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Prijs" ColumnName="Prijs" />
+          <ScalarProperty Name="Naam" ColumnName="Naam" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderRegels">
+      <EntityTypeMapping TypeName="IsTypeOf(WebshopModel.OrderRegel)">
+        <MappingFragment StoreEntitySet="OrderRegels">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Aantal" ColumnName="Aantal" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="GebruikerOrder" TypeName="WebshopModel.GebruikerOrder" StoreEntitySet="Orders">
+      <EndProperty Name="Gebruiker">
+        <ScalarProperty Name="Id" ColumnName="Gebruiker_Id" />
+      </EndProperty>
+      <EndProperty Name="Order">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="OrderOrderRegel" TypeName="WebshopModel.OrderOrderRegel" StoreEntitySet="OrderRegels">
+      <EndProperty Name="Order">
+        <ScalarProperty Name="Id" ColumnName="Order_Id" />
+      </EndProperty>
+      <EndProperty Name="OrderRegel">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="OrderRegelProduct" TypeName="WebshopModel.OrderRegelProduct" StoreEntitySet="OrderRegels">
+      <EndProperty Name="Product">
+        <ScalarProperty Name="Id" ColumnName="Product_Id" />
+      </EndProperty>
+      <EndProperty Name="OrderRegel">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
