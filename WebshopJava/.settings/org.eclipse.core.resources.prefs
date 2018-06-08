@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+encoding//src/org/datacontract/schemas/_2004/_07/WcfWebShopLibrary/Gebruiker.java=UTF-8
+encoding//src/org/datacontract/schemas/_2004/_07/WcfWebShopLibrary/Order.java=UTF-8
+encoding//src/org/datacontract/schemas/_2004/_07/WcfWebShopLibrary/OrderRegel.java=UTF-8
+encoding//src/org/datacontract/schemas/_2004/_07/WcfWebShopLibrary/Product.java=UTF-8
+encoding//src/org/tempuri/BasicHttpBinding_IWebShopServiceStub.java=UTF-8
+encoding//src/org/tempuri/IWebShopService.java=UTF-8
+encoding//src/org/tempuri/WebShopService.java=UTF-8
+encoding//src/org/tempuri/WebShopServiceLocator.java=UTF-8
