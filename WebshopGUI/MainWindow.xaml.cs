@@ -30,10 +30,25 @@ namespace WebshopGUI
 
         IWebShopService winkelService = new WebShopService();
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Login_Button_Click(object sender, RoutedEventArgs e)
         {
 
-            test.Content = winkelService.Test("hoi");
+            Login_Button.Content = winkelService.Test("hoi");
+
+        }
+
+        private void Buy_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Refresh_Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Register_Button_Click(object sender, RoutedEventArgs e)
+        {
 
         }
     }
