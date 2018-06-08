@@ -57,7 +57,7 @@ namespace WebshopGUI
                 
             } else
             {
-                MessageBox.Show("Verkeerde inlog kut!");
+                MessageBox.Show("Voer geldige inlog gegevens in.");
             }
 
         }
@@ -70,7 +70,7 @@ namespace WebshopGUI
                 Register_Password_Label.Content = ReverseString(username);
             } else
             {
-                MessageBox.Show("fuck you vieze hacker!");
+                MessageBox.Show("Deze username bestaat als.");
             }
         }
 
@@ -82,7 +82,7 @@ namespace WebshopGUI
 
             if (ingelogd.Saldo == 0 || product.Prijs > ingelogd.Saldo)
             {
-                MessageBox.Show("fuck you cheap bitch!");
+                MessageBox.Show("Je hebt onvoldoende saldo!");
             } else
             {
                 ingelogd = winkelService.KoopProduct(ingelogd, product); 
