@@ -33,9 +33,37 @@ namespace WebshopGUI
 
         private void Login_Button_Click(object sender, RoutedEventArgs e)
         {
-            Debug.WriteLine("test");
-            Login_Button.Content = winkelService.Test("hoi");
+            Gebruiker g1 = winkelService.Login(Login_Username_Textbox.Text, Login_Password_Textbox.Text);
+            if (g1 != null)
+            {
+                User_Label.Content = g1.Naam;
+                Saldo_Label.Content = g1.Saldo;
+            }
 
+        }
+
+        private void Register_Button_Click(object sender, RoutedEventArgs e)
+        {
+            string username = Register_Username_Textbox.Text;
+            if (winkelService.RegisterUser(username, ReverseString(username)))
+            {
+                Register_Password_Label.Content = ReverseString(username);
+            } else
+            {
+                MessageBox.Show("fuck you vieze hacker!");
+            }
+            
+            
+           
+            
+           
+        }
+
+        public static string ReverseString(string s)
+        {
+            char[] arr = s.ToCharArray();
+            Array.Reverse(arr);
+            return new string(arr);
         }
 
         private void Buy_Button_Click(object sender, RoutedEventArgs e)
@@ -48,9 +76,6 @@ namespace WebshopGUI
 
         }
 
-        private void Register_Button_Click(object sender, RoutedEventArgs e)
-        {
 
-        }
     }
 }

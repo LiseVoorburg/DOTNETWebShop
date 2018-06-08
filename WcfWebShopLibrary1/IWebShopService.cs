@@ -12,8 +12,10 @@ namespace WcfWebShopLibrary
     public interface IWebShopService
     {
         [OperationContract]
-        void PostNote(string from, string note);
+        bool RegisterUser(string username, string password);
         [OperationContract]
         string Test(String s);
+        [OperationContract]
+        Gebruiker Login(string username, string password);
     }
 }

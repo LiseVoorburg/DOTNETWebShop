@@ -15,3 +15,4 @@ C:\Users\koenfischer\Source\Repos\DOTNETWebShop\WcfWebShopLibrary1\bin\Debug\Ent
 C:\Users\koenfischer\Source\Repos\DOTNETWebShop\WcfWebShopLibrary1\bin\Debug\EntityFramework.xml
 C:\Users\koenfischer\Source\Repos\DOTNETWebShop\WcfWebShopLibrary1\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\koenfischer\Source\Repos\DOTNETWebShop\WcfWebShopLibrary1\obj\Debug\WcfWebShopLibrary1.csproj.CopyComplete
+C:\Users\koenfischer\source\repos\DOTNETWebShop\WcfWebShopLibrary1\obj\Debug\WcfWebShopLibrary1.csprojResolveAssemblyReference.cache

@@ -14,15 +14,45 @@ namespace WcfWebShopLibrary
         //string test = "kak";
         string s;
 
-        public void PostNote(string from, string note)
+        public bool RegisterUser(string username, string password)
         {
-            Debug.WriteLine("{0}: {1}", from, note);
+            using (WebshopModelContainer ctx = new WebshopModelContainer())
+            {
+                var gebruikers = from p in ctx.Gebruikers select p;
+                foreach (Gebruiker p in gebruikers)
+                {
+                    if (p.Naam == username)
+                    {
+                        return false;
+                    }
+                }
+             
+                    Gebruiker g1 = new Gebruiker { Naam = username, Wachtwoord = password, Saldo = 100 };
+                    ctx.Gebruikers.Add(g1);
+                    ctx.SaveChanges();
 
+                return true;
+            }
+        }
+
+        public Gebruiker Login(string username, string password)
+        {
+            using (WebshopModelContainer ctx = new WebshopModelContainer())
+            {
+                var gebruikers = from p in ctx.Gebruikers select p;
+                foreach (Gebruiker p in gebruikers)
+                {
+                    if (p.Naam == username && p.Wachtwoord == password)
+                    {
+                        return p;
+                    }
+                }
+            }
+            return null;
         }
 
 
-
-public string Test(string k)
+        public string Test(string k)
         {
             Debug.WriteLine("methode");
             using (WebshopModelContainer ctx = new WebshopModelContainer())
@@ -43,6 +73,5 @@ public string Test(string k)
 
             return "test";
         }
-
     }
 }

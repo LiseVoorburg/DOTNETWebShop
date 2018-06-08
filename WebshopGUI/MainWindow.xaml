@@ -18,7 +18,6 @@
             <Label Content="Login" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="68,9,0,0"/>
         </Border>
         <TextBox Name="Register_Username_Textbox" HorizontalAlignment="Left" Height="23" Margin="42,68,0,0" TextWrapping="Wrap" Text="Username" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
-        <TextBox Name="Register_Password_Textbox" HorizontalAlignment="Left" Height="23" Margin="42,96,0,0" TextWrapping="Wrap" Text="Password" VerticalAlignment="Top" Width="120" Grid.Row="1"/>
         <Label Content="Register" HorizontalAlignment="Left" Margin="75,37,0,0" Grid.Row="1" VerticalAlignment="Top"/>
         <Button Name="Register_Button" Content="Register" HorizontalAlignment="Left" Margin="62,136,0,0" Grid.Row="1" VerticalAlignment="Top" Width="76" Click="Register_Button_Click"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="150" Margin="10,37,0,0" Grid.Row="1" VerticalAlignment="Top" Width="185"/>
@@ -31,8 +30,10 @@
         <Label Content="User: " HorizontalAlignment="Left" Margin="308,73,0,0" Grid.Row="1" VerticalAlignment="Top"/>
         <Label Name="User_Label" Content="" HorizontalAlignment="Left" Margin="364,73,0,0" Grid.Row="1" VerticalAlignment="Top"/>
         <Label Content="Moneyz: €" HorizontalAlignment="Left" Margin="308,101,0,0" Grid.Row="1" VerticalAlignment="Top"/>
-        <Label Content="0.0" HorizontalAlignment="Left" Margin="372,101,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label Name="Saldo_Label" Content="0.0" HorizontalAlignment="Left" Margin="372,101,0,0" Grid.Row="1" VerticalAlignment="Top"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="294" Margin="276,60,0,0" VerticalAlignment="Top" Width="493" Grid.RowSpan="2"/>
+        <Label Content="Password:" HorizontalAlignment="Left" Margin="19,101,0,0" Grid.Row="1" VerticalAlignment="Top"/>
+        <Label Name="Register_Password_Label" Content="" HorizontalAlignment="Left" Margin="86,101,0,0" Grid.Row="1" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>
