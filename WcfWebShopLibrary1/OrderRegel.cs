@@ -17,11 +17,6 @@ namespace WcfWebShopLibrary
         public int Id { get; set; }
         public int Aantal { get; set; }
         public int InventoryId { get; set; }
-        override
-        public string ToString()
-        {
-            return "naam: " + Product.Naam + ", prijs: " + Product.Prijs + ", aantal: " + Aantal;  
-        }
     
         public virtual Inventory Order { get; set; }
         public virtual Product Product { get; set; }

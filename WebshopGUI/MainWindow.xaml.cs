@@ -85,14 +85,12 @@ namespace WebshopGUI
                 MessageBox.Show("fuck you cheap bitch!");
             } else
             {
-                ingelogd = winkelService.KoopProduct(ingelogd, product);
+                ingelogd = winkelService.KoopProduct(ingelogd, product); 
                 Saldo_Label.Content = ingelogd.Saldo;
                 foreach (OrderRegel or in ingelogd.Order.OrderRegel)
                 {
                     Product_Inventory_ListBox.Items.Add(or);
                 }
-                
-                
             }
         }
 
